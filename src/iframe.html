@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" id="iframe">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        div {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            /* Firefox */
+            -webkit-box-sizing: border-box;
+            /* Safari */
+        }
+        
+        .self-nav-btn {
+            position: fixed;
+            left: 0;
+            bottom: 0.5px;
+            display: flex;
+            width: 100%;
+        }
+        
+        .self-nav-btn button {
+            display: block;
+            border-left: none;
+            border-right: none;
+            flex: 1;
+        }
+        
+        .details {
+            height: calc(100% - 54px);
+        }
+        
+        @media screen and (max-width: 350px) {
+            .btn-font {
+                display: none
+            }
+            .details {
+                height: calc(100% - 34px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav" class="btn-group self-nav-btn" role="group">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></br><span class="btn-font">首页</span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-th-list"></span></br><span class="btn-font">商品分类</span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span></br><span class="btn-font">购物车</span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></br><span class="btn-font">订单中心</span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span></br><span class="btn-font">随心订</span></button>
+    </div>
+    <section class="details">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" class="thumbnail">
+                        <img src="../images/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="thumbnail">
+                        <img src="../images/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="thumbnail">
+                        <img src="../images/6.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./swiper-3.4.2.min.js"></script>
+    <script src="./jquery.mobile-1.4.5.min.js"></script>
+    <script src="./iframe.js"></script>
+</body>
+
+</html>
