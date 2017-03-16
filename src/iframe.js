@@ -21,7 +21,7 @@ window.onload = function () {
         var _$ = $;
         $ = jQuery;
     }
-    $("#nav button").on("vclick",function(){
+    $("#nav button").on("click",function(){
         alert("s");
     })
 }
