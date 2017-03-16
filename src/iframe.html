@@ -53,36 +53,60 @@
                 height: calc(100% - 34px);
             }
         }
+        .self-group-search{
+            padding: 0 0.1rem;
+        }
+        #swiper-container-2{
+            position: relative;
+        }
+        #swiper-container-2 .swiper-pagination{
+            bottom: 0.5rem;
+        }
+        .self-title{
+            font-size: 0.3rem;
+            text-align: center;
+            margin: 0.1rem 0;
+        }
     </style>
 </head>
 
 <body>
     <div id="nav" class="btn-group self-nav-btn" role="group">
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></br><span class="btn-font">首页</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-th-list"></span></br><span class="btn-font">商品分类</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span></br><span class="btn-font">购物车</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></br><span class="btn-font">订单中心</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span></br><span class="btn-font">随心订</span></button>
+        <button data-key="1" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span></br><span class="btn-font">首页</span></button>
+        <button data-key="2" type="button" class="btn btn-default"><span class="glyphicon glyphicon-th-list"></span></br><span class="btn-font">商品分类</span></button>
+        <button data-key="3" type="button" class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span></br><span class="btn-font">购物车</span></button>
+        <button data-key="4" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></br><span class="btn-font">订单中心</span></button>
+        <button data-key="5" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span></br><span class="btn-font">随心订</span></button>
     </div>
-    <section class="details">
-        <div class="swiper-container">
+    <section class="details-1">
+        <div id="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <a href="#" class="thumbnail">
-                        <img src="../images/6.jpg" alt="">
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#" class="thumbnail">
-                        <img src="../images/7.jpg" alt="">
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#" class="thumbnail">
-                        <img src="../images/6.jpg" alt="">
-                    </a>
-                </div>
+                <div class="swiper-slide"><a href="#" class="thumbnail"><img src="../images/t.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="#" class="thumbnail"><img src="../images/h.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="#" class="thumbnail"><img src="../images/k.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="#" class="thumbnail"><img src="../images/n.png" alt=""></a></div>
             </div>
+            <!--<div class="swiper-pagination"></div>-->
+        </div>
+        <div>
+            <div class="input-group self-group-search">
+                <input type="text" class="form-control" placeholder="Search for fruit">
+                <span class="input-group-btn"><button id="input-group-search" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button></span>
+            </div>
+        </div>
+        <div>
+            <p class="self-title">最新活动</p>
+            <div id="swiper-container-2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#" class="thumbnail"><img src="../images/t.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="#" class="thumbnail"><img src="../images/h.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="#" class="thumbnail"><img src="../images/k.png" alt=""></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div>
+            <p class="self-title">热销产品</p>
         </div>
     </section>
 
