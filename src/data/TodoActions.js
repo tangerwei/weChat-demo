@@ -41,12 +41,12 @@ const Actions = {
     },
     toggleAllTodos(){
         TodoDispatcher.dispatch({
-            type:ToddActionTypes.TOGGLE_ALL_TODOS
+            type:TodoActionTypes.TOGGLE_ALL_TODOS
         });
     },
     toggleTodo(id){
         TodoDispatcher.dispatch({
-            type:TodoActionType.TOGGLE_TODO,
+            type:TodoActionTypes.TOGGLE_TODO,
             id
         });
     },

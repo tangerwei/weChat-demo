@@ -12,8 +12,9 @@ var uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
 var config = {
     plugins: [commonPlugin, uglifyPlugin],
     entry: {
-        iframe: path.resolve(__dirname, 'src/iframe.js'),
-        test: path.resolve(__dirname, 'src/test.js')
+        // iframe: path.resolve(__dirname, 'src/iframe.js'),
+        // test: path.resolve(__dirname, 'src/test.js')
+        root:path.resolve(__dirname, 'src/root.js')
     },
     //其他配置//[name].[hash].js
     output: {
