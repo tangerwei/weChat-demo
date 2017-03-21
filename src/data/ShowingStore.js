@@ -1,24 +1,23 @@
 'use strict';
 
+import {Map} from 'immutable';
 import {ReduceStore} from 'flux/utils';
 import TodoActionTypes from './TodoActionTypes';
 import TodoDispatcher from './TodoDispatcher';
 
-class TodoEditStore extends ReduceStore{
+class ShowingStore extends ReduceStore{
     constructor(){
         super(TodoDispatcher);
     }
 
     getInitialState(){
-        return '';
+        return Map({applistIndex:"1"});
     }
 
     reduce(state,action){
-        switch (action.type){
-            case TodoActionTypes.START_EDITING_TODO:
-            return action.id;
-            case TodoActionTypes.STOP_EDITING_TODO:
-            return '';
+        switch(action.type){
+            case TodoActionTypes.TOGGLE_LIST_INDEX:
+            return state.set("applistIndex",action.value);
 
             default:
             return state;
@@ -26,4 +25,4 @@ class TodoEditStore extends ReduceStore{
     }
 }
 
-export default new TodoEditStore();
+export default new ShowingStore();
