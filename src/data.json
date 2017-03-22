@@ -1,0 +1,15 @@
+{
+    "swiper":[{
+        "src":"../images/h.png",
+        "href":"http://www.baidu.com"
+    },{
+        "src":"../images/k.png",
+        "href":"http://www.baidu.com"
+    },{
+        "src":"../images/n.png",
+        "href":"http://www.baidu.com"
+    },{
+        "src":"../images/t.png",
+        "href":"http://www.baidu.com"
+    }]
+}

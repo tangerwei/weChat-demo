@@ -1,10 +1,12 @@
 'use strict';
 
 import React from 'react';
+import SwiperF from 'SwiperF';
 
 function AppView(props) {
   return (
     <div>
+      <Main {...props} />
       <Footer {...props} />
     </div>
   );
@@ -12,13 +14,13 @@ function AppView(props) {
 
 //
 function Footer(props) {
-  const buttonlist = [1,2,3,4,5];
-  const textList = ["首页","商品分类","购物车","订单中心","随心订"];
-  const iconList = ["home","th-list","shopping-cart","star","user"];
+  const buttonlist = [1, 2, 3, 4, 5];
+  const textList = ["首页", "商品分类", "购物车", "订单中心", "随心订"];
+  const iconList = ["home", "th-list", "shopping-cart", "star", "user"];
   return (<div id="nav" className="btn-group self-nav-btn" role="group">
     {
-      buttonlist.map((data,index)=>(
-        <button onClick = {props.onToggleIndex.bind(this,index)} key={index} type="button" className={index == props.showing.get("applistIndex") ? "btn-primary" : "btn-default" + " " + "btn"}>
+      buttonlist.map((data, index) => (
+        <button onClick={props.onToggleIndex.bind(this, index)} key={index} type="button" className={(index == props.showing.get("applistIndex") ? "btn-primary" : "btn-default") + " " + "btn"}>
           <span className={"glyphicon glyphicon" + "-" + iconList[index]}></span>
           <br></br>
           <span className="btn-font">{textList[index]}</span>
@@ -26,5 +28,66 @@ function Footer(props) {
     }
   </div>);
 }
+
+function Main(props) {
+  switch (props.showing.get("applistIndex")) {
+    case "0":
+      return (<FirstPage {...props} />);
+    // case "1":
+    // return(<SecondPage {...props}/>);
+    // case "2":
+    // return(<ThirdPage {...props}/>);
+    // case "3":
+    // return(<LastPage {...props}/>);
+    default:
+      return (<FirstPage {...props} />);
+  }
+}
+
+function FirstPage(props) {
+  return (<section className="pages">
+    <h3>每日精选</h3>
+    <Swiper />
+  </section>)
+}
+
+const Swiper = React.createClass({
+  componentDidMount() {
+    console.log("componentDidMount");
+    const self = this;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "../src/data.json", true);
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        if (this.status == 200) {
+          const tmp = JSON.parse(this.responseText);
+          self.loadData(tmp.swiper);
+          var mySwiper = new SwiperF('#swiper-container', {
+            autoplay: 5000,//可选选项，自动滑动
+          });
+        }
+      }
+    }
+    xhr.send();
+  },
+  loadData(data) {
+    const self = this;
+    data.map(function (T, i) {
+      console.log(self.refs["swiper_a_" + i]);
+      self.refs["swiper_a_" + i].href = T.href;
+      self.refs["swiper_img_" + i].src = T.src;
+    })
+  },
+  render() {
+    const list = ["#", "#", "#", "#"];
+    const piclist = list.map(function (value, index) {
+      return (<div ref={"cs_"+index} key={index} className="swiper-slide"><a ref={"swiper_a_" + index} href={value[index]} className="thumbnail"><img ref={"swiper_img_" + index} src={value[index]} alt="" /></a></div>)
+    });
+    return (<div id="swiper-container">
+      <div className="swiper-wrapper">
+        {piclist}
+      </div></div>)
+  }
+})
 
 export default AppView;

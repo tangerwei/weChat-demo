@@ -40,7 +40,8 @@ var config = {
     }, 
     externals: {
         React: 'window.React',
-        ReactDOM: 'window.ReactDOM'
+        ReactDOM: 'window.ReactDOM',
+        SwiperF:'window.Swiper'
     },
 
 };
