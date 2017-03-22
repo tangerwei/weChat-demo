@@ -12,7 +12,6 @@ function AppView(props) {
   );
 }
 
-//
 function Footer(props) {
   const buttonlist = [1, 2, 3, 4, 5];
   const textList = ["首页", "商品分类", "购物车", "订单中心", "随心订"];
@@ -63,7 +62,6 @@ function BittonList(props){
 
 const Swiper = React.createClass({
   componentDidMount() {
-    console.log("componentDidMount");
     const self = this;
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "../src/data.json", true);
@@ -83,7 +81,6 @@ const Swiper = React.createClass({
   loadData(data) {
     const self = this;
     data.map(function (T, i) {
-      console.log(self.refs["swiper_a_" + i]);
       self.refs["swiper_a_" + i].href = T.href;
       self.refs["swiper_img_" + i].src = T.src;
     })
