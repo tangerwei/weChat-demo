@@ -9,13 +9,87 @@
     <script src="./common-js/swiper-3.4.2.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="./common-css/swiper-3.4.2.min.css" />
-    <style> html, body { height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden; } div { box-sizing: border-box; -moz-box-sizing:
-border-box; /* Firefox */ -webkit-box-sizing: border-box; /* Safari */ } .self-nav-btn { position: fixed; left: 0; bottom:
-0.5px; display: flex; width: 100%; } .self-nav-btn button { display: block; border-left: none; border-right: none; flex:
-1; } .btn-font { font-size: 12px; } .pages{ width: calc(100% - 30px); margin-left: 15px; margin-right: 15px; } @media screen
-and (max-width: 350px) { .btn-font { display: none } .details { height: calc(100% - 34px); } } .self-group-search { padding:
-0 0.1rem; } #swiper-container-2 { position: relative; } #swiper-container-2 .swiper-pagination { bottom: 0.5rem; } .self-title
-{ font-size: 0.3rem; text-align: center; margin: 0.1rem 0; }
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        div {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            /* Firefox */
+            -webkit-box-sizing: border-box;
+            /* Safari */
+        }
+        
+        .self-nav-btn {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            width: 100%;
+        }
+        
+        .self-nav-btn button {
+            display: block;
+            border-left: none;
+            border-right: none;
+            flex: 1;
+        }
+        
+        .btn-font {
+            font-size: 12px;
+        }
+        
+        .pages {
+            width: calc(100% - 30px);
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        
+        @media screen and (max-width: 350px) {
+            .btn-font {
+                display: none
+            }
+            .details {
+                height: calc(100% - 34px);
+            }
+        }
+        
+        #swiper-container {
+            overflow: hidden;
+        }
+        
+        #firstPage_label_list {
+            list-style: none;
+            height: 1.4rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+        #firstPage_label_list li {
+            float: left;
+            width: 25%;
+            height: calc(100% - 6px);
+            border-left: 1px solid #fff;
+            color: #fff;
+            margin: 3px 0px;
+            text-align: center;
+            background-color: #1f1f1f;
+        }
+        .self-img-full{
+            width: 50%;
+            height: 60%;
+        }
+        #firstPage_label_list li:first{
+            border-left: none;
+        }
     </style>
 </head>
 
@@ -23,6 +97,21 @@ and (max-width: 350px) { .btn-font { display: none } .details { height: calc(100
     <div id="root"></div>
     <script src="../build/common.js"></script>
     <script src="../build/root.js"></script>
+    <script>
+        var setFont = function (w, d) {//w : window d : document
+            if (!w || !d) {
+                return;
+            }
+            var wd = w.innerWidth;
+            var doc = d.documentElement;
+            if (w.innerWidth > 640 || w.innerWidth == 640) {
+                doc.style.fontSize = "100px";
+            } else {
+                doc.style.fontSize = 100 * (wd / 640) + "px";
+            }
+        }
+        setFont(window, document);
+    </script>
 </body>
 
 </html>
