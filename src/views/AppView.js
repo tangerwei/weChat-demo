@@ -1,8 +1,7 @@
 'use strict';
-
 import React from 'react';
-import SwiperF from 'SwiperF';
-
+import swiper from 'swiper';
+console.log(swiper);
 function AppView(props) {
   return (
     <div>
@@ -64,13 +63,13 @@ const Swiper = React.createClass({
   componentDidMount() {
     const self = this;
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../src/data.json", true);
+    xhr.open("GET", "data.json", true);
     xhr.onreadystatechange = function () {
       if (this.readyState == 4) {
         if (this.status == 200) {
           const tmp = JSON.parse(this.responseText);
           self.loadData(tmp.swiper);
-          var mySwiper = new SwiperF('#swiper-container', {
+          var mySwiper = new swiper('#swiper-container', {
             autoplay: 5000,//可选选项，自动滑动
           });
         }
@@ -96,5 +95,4 @@ const Swiper = React.createClass({
       </div></div>)
   }
 })
-
 export default AppView;
