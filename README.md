@@ -10,7 +10,7 @@
 <p>
 2017年3月21日 15:52:43 初步将代码迁移到flux框架上
 </p>
-<p><a href="https://tangerwei.github.io/weChat-demo/index.html">demo地址</p>
+<p><a href="https://tangerwei.github.io/weChat-demo/index.html">demo地址</a></p>
 
 <p>
 2017年3月23日 17:52:13
