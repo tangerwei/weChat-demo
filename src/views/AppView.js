@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 import swiper from 'swiper';
-console.log(swiper);
+import Style from '../style.css';
 function AppView(props) {
   return (
     <div>
