@@ -16,3 +16,10 @@ app.use(ctx => {
     ctx.body = data;
 });
 app.listen(8888);
+
+const mobileapp = new Koa();
+mobileapp.use(ctx=>{
+    console.log('this is a mobile');
+    ctx.body = 'hello';
+});
+mobileapp.listen(8088);
