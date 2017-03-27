@@ -17,10 +17,10 @@ html,
         
         .self-nav-btn {
             position: fixed;
-            left: 0;
-            bottom: 0.5px;
+            left: -2px;
+            bottom: 0;
             display: flex;
-            width: 100%;
+            right: -2px;
         }
         
         .self-nav-btn button {
@@ -42,6 +42,9 @@ html,
             .details {
                 height: calc(100% - 34px);
             }
+            .self-img-font{
+                display: none;
+            }
         }
         .self-group-search{
             padding: 0 0.1rem;
@@ -58,26 +61,28 @@ html,
             margin: 0.1rem 0;
         }
         #firstPage_label_list li {
-            float: left;
-            width: 25%;
-            height: calc(100% - 6px);
             border-left: 1px solid #fff;
             color: #fff;
             margin: 3px 0px;
             text-align: center;
             background-color: #1f1f1f;
+            -webkit-flex:1;
+            -moz-flex:1;
+            flex: 1;
         }
         .self-img-full{
             width: 50%;
-            height: 60%;
+            height: auto;
         }
         #firstPage_label_list li:first{
             border-left: none;
         }
         #firstPage_label_list {
             list-style: none;
-            height: 1.4rem;
             margin: 0;
             padding: 0;
             width: 100%;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: flex;
         }

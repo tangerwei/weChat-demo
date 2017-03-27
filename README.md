@@ -21,5 +21,6 @@
 </p>
 <p>此版本非静态网页，暂时不提供网页demo</p>
 <p>
-    本地服务器部署，运行npm run test
+    本地服务器部署，运行npm run test</br>
+    <a href='http://localhost:8888/index.html'>本地访问地址</a>
 </p>

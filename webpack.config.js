@@ -11,6 +11,7 @@ var uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
 })
 var htmlWebpackPlugin = require("html-webpack-plugin");
 var htmlsc = new htmlWebpackPlugin({
+    filename:'iframe.html',
     template:path.resolve(__dirname, 'temple.html'),//需要编译的模板,可以是jade等第三方模板引擎也可以说纯html页面
 })
 var config = {
