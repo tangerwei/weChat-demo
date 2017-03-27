@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const Koa = require('koa');
 const koaRead = require('./koa/koaReadFile');
@@ -7,6 +6,7 @@ const mimetypes = require('./server/mimetype.config');
 const app = new Koa();
 
 //同步读取文件等待
+//const fs = require('fs');
 // app.use(ctx => {
 //     if(ctx.url == "favicon.ico"){
 //         return;
