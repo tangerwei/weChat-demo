@@ -3,7 +3,7 @@ const _readFileP = function(fileurl){
     return new Promise(function(resolve,reject){
         fs.readFile(fileurl,function(err,data){
             if(err){
-                reject(err)
+                reject(err);
             }else{
                 resolve(data);
             }

@@ -43,12 +43,7 @@ var config = {
             test: /\.css$/,
             loaders: ['style-loader','css-loader']
         }]
-    },
-    externals: {
-        React: 'window.React',
-        ReactDOM: 'window.ReactDOM',
-        SwiperF: 'window.Swiper'
-    },
+    }
 
 };
 module.exports = config;
