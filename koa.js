@@ -36,4 +36,4 @@ app.use(async(ctx,next)=>{
     const data = koaRead.readFile(_flies);//fs.readFileSync(_flies);
     ctx.body = await data;
 })
-app.listen(8888);
+app.listen(8080);
