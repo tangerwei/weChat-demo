@@ -6,7 +6,7 @@ import TodoActionTypes from './TodoActionTypes';
 import TodoDispatcher from './TodoDispatcher';
 
 class ActionStore extends ReduceStore {
-    constructor(){
+    constructor() {
         super(TodoDispatcher);
     }
     getInitialState() {
@@ -15,7 +15,7 @@ class ActionStore extends ReduceStore {
     reduce(state, action) {
         switch (action.type) {
             case TodoActionTypes.LOGIN:
-                return state.set("loginState", true);
+                return state.set("loginState", action.value);
 
             default:
                 return state;

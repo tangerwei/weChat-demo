@@ -4,7 +4,9 @@
   "description": "use react to rebuild wechat program",
   "main": "build.js",
   "scripts": {
-    "test": "node ./koa/koaRouter"
+    "test": "node ./koa/koaRouter",
+    "testA": "node ./koa/koaRouterA",
+    "testB": "node ./koa/koaRouterB"
   },
   "repository": {
     "type": "git",

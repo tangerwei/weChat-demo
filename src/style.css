@@ -101,3 +101,16 @@ div {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.loginhold{
+    width: 45%;
+    padding: 10px;
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+.password,.self-login-btn{
+    margin-top:10px;
+}
