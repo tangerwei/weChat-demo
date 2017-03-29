@@ -43,14 +43,32 @@ const password = '111111';
 
 //验证登录权限
 router.put('/login',(ctx,next)=>{
-    console.log(ctx.req);
+    let user = ctx.request.body;
+    let state = false;
+    if(admin == user.username && password == user.password){
+        state = true;
+    }
     let data = {
-        value:10
+        exist:state
     }
     ctx.body = JSON.stringify(data);
     ctx.type = mimetype['json'];
 })
+//数据解析
+const bodyParser = require('koa-bodyparser');
+//app.use(bodyParser());
+app.use((ctx,next)=>{
+    let buffers = [];
+    ctx.req.on('data',(chunk)=>{
+        buffers.push(chunk);
+    });
+    ctx.req.on('end',()=>{
+        console.log(buffers);
+    });
+    next();
+});
 
-app.use(router.routes());
+//路由解析
+app.use(router.routes());   
 app.use(router.allowedMethods());
 app.listen(8080);

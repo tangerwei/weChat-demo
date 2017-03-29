@@ -30,15 +30,18 @@ function login(username, password, callback) {
     let xhr = new XMLHttpRequest();
     let url = 'http://localhost:8080/login';
     xhr.open('PUT', url, true);
+    xhr.setRequestHeader('Content-Type','application/json');
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                let result = JSON.parse(this.responseText);
+                let result = JSON.parse(xhr.responseText);
                 if(result.exist && result.exist === true){
                     //登录成功。将用户登录状态存入缓存
-                    sessionStorage.setItem(key, JSON.stringify(value));
+                    //sessionStorage.setItem(key, JSON.stringify(value));
                     //打开详细信息界面
                     callback(true);
+                }else{
+                    callback(false);
                 }
             } else {
                 console.log('login fail');
