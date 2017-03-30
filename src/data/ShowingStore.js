@@ -20,7 +20,9 @@ class ShowingStore extends ReduceStore {
             case TodoActionTypes.TOGGLE_LIST_INDEX:
                 return state.set("applistIndex", action.value);
             case TodoActionTypes.OPENLOGIN:
-                return state.set("loginpageopen", action.value);
+                return state.set("loginpageopen", true);
+            case TodoActionTypes.CLOSELOGIN:
+                return state.set("loginpageopen", false);
             default:
                 return state;
         }

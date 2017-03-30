@@ -1,6 +1,7 @@
 const ActionTypes = {
     TOGGLE_LIST_INDEX: 'TOGGLE_LIST_INDEX',
     LOGIN:'LOGIN',
-    OPENLOGIN:"OPENLOGIN"
+    OPENLOGIN:'OPENLOGIN',
+    CLOSELOGIN:'CLOSELOGIN'
 }
 export default ActionTypes;

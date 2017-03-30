@@ -51,14 +51,6 @@ div {
     padding: 0 0.1rem;
 }
 
-#swiper-container-2 {
-    position: relative;
-}
-
-#swiper-container-2 .swiper-pagination {
-    bottom: 0.5rem;
-}
-
 .self-title {
     font-size: 0.3rem;
     text-align: center;
@@ -103,14 +95,44 @@ div {
 }
 
 .loginhold{
-    width: 45%;
-    padding: 10px;
-    text-align: right;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%)
+    padding: 0 0.4rem;
+    margin-top: 0.4rem;
 }
 .password,.self-login-btn{
-    margin-top:10px;
+    margin-top:0.2rem;
+}
+button.self-login-btn{
+    width: 100%;
+}
+.self-login-pages{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.4rem;
+    background-color: yellowgreen;
+}
+.self-icon-words span:last-child{
+    float: right
+}
+img.self-login-logo{
+    width: 100%;
+    height: auto;
+}
+.self-icon-words {
+    margin-top: 0.1rem;
+}
+.self-other-login{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.pages{
+    margin-top: 0.2rem;
+    padding: 0 0.4rem;
+}
+
+#swiper-container{
+    overflow: hidden;
 }

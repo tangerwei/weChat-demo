@@ -24,6 +24,12 @@ const Actions = {
             type: TodoActionTypes.OPENLOGIN,
             value
         });
+    },
+    closelogin:function(value){
+        TodoDispatcher.dispatch({
+            type: TodoActionTypes.CLOSELOGIN,
+            value
+        });
     }
 };
 function login(username, password, callback) {

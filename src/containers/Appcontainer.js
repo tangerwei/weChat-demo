@@ -18,6 +18,7 @@ function getState(){
         onToggleIndex:TodoActions.toggleIndex,
         onLogin:TodoActions.login,
         onOpenLogin:TodoActions.openlogin,
+        onCloseLogin:TodoActions.closelogin,
     }
 }
 
