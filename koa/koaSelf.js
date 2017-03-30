@@ -16,7 +16,12 @@ app.use(async (ctx, next) => {
         });
     });
     let str = await data;
-    ctx.request.body = ctx.request.body||JSON.parse(str.toString());
-    console.log(ctx.request.body);
+    if(ctx.headers['content-type'] && ctx.headers['content-type'].toLowerCase == 'application/json'){
+        ctx.request.body = ctx.request.body||JSON.parse(str.toString());
+    }else{
+        ctx.request.body = {
+            mes:'please add a content-type named application/json'
+        }
+    }
     await next();
 });
