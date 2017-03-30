@@ -98,6 +98,9 @@ div {
     padding: 0 0.4rem;
     margin-top: 0.4rem;
 }
+.loginhold input{
+    height: 0.7rem;
+}
 .password,.self-login-btn{
     margin-top:0.2rem;
 }
