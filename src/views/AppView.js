@@ -19,7 +19,7 @@ function AppView(props) {
 
 function Footer(props) {
   const buttonlist = [0, 1, 2, 3, 4];
-  const textList = ["首页", "商品分类", "购物车", "订单中心", "随心订"];
+  const textList = ["首页", "商品分类", "购物车", "订单中心", "用户"];
   const iconList = ["home", "th-list", "shopping-cart", "star", "user"];
   return (<div id="nav" className="btn-group self-nav-btn" role="group">
     {
