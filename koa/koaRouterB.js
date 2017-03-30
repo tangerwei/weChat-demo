@@ -42,33 +42,48 @@ const admin = 'tangerwei';
 const password = '111111';
 
 //验证登录权限
-router.put('/login',(ctx,next)=>{
+router.put('/login', (ctx, next) => {
     let user = ctx.request.body;
     let state = false;
-    if(admin == user.username && password == user.password){
+    if (admin == user.username && password == user.password) {
         state = true;
     }
     let data = {
-        exist:state
+        exist: state
     }
     ctx.body = JSON.stringify(data);
     ctx.type = mimetype['json'];
 })
 //数据解析
 const bodyParser = require('koa-bodyparser');
-//app.use(bodyParser());
-app.use((ctx,next)=>{
-    let buffers = [];
-    ctx.req.on('data',(chunk)=>{
-        buffers.push(chunk);
-    });
-    ctx.req.on('end',()=>{
-        console.log(buffers);
-    });
-    next();
-});
+app.use(bodyParser());
 
 //路由解析
-app.use(router.routes());   
+app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen(8080);
+
+
+//自己编写的数据解析，需要完善很多地方
+// app.use(async (ctx, next) => {
+//     if(ctx.url != '/login'){
+//         await next();
+//         return;
+//     }
+//     let req = ctx.req || ctx;
+//     let buffers = [];
+//     let size = 0;
+//     req.on('data', (chunk) => {
+//         buffers.push(chunk);
+//         size += chunk.length;
+//     });
+//     let data = new Promise(function (resolve, reject) {
+//         return req.on('end', () => {
+//             resolve(Buffer.concat(buffers,size));
+//         });
+//     });
+//     let str = await data;
+//     ctx.request.body = ctx.request.body||JSON.parse(str.toString());
+//     console.log(ctx.request.body);
+//     await next();
+// });

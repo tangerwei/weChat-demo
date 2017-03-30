@@ -1,45 +1,22 @@
-
-const Koa = require('koa');
-const KoaRouter = require('koa-router');
-const koaRead = require('../koa/koaReadFile');
-const path = require('path');
-const mimetype = require('../server/mimetype.config');
-
-//注意此函数返回的是相对项目根节点的路径
-function getpath(url) {
-    let result = path.resolve(__dirname, "../build" + url);
-    return result;
-}
-
-const app = new Koa();
-
-//获取前端传输数据的方式可以自己添加中间件，而实际使用方式如下
-app.use(function(req, res, next){
-   var dataB = "";
-   req.on('data', function(chunk){ dataB += chunk})
-   req.on('end', function(err,data){
-      req.rawBody = dataB;
-      next();
-   })
-})
-
-//上述翻译如下
-app.use(async(ctx,next)=>{
-    let data = "";
-    req.on('data', function(chunk){ data += chunk});
-    ctx.req._self = await new Promise(function(resolve,reject){
-        req.on('end',function(){
-            resolve(data);
+app.use(async (ctx, next) => {
+    if(ctx.url != '/login'){
+        await next();
+        return;
+    }
+    let req = ctx.req || ctx;
+    let buffers = [];
+    let size = 0;
+    req.on('data', (chunk) => {
+        buffers.push(chunk);
+        size += chunk.length;
+    });
+    let data = new Promise(function (resolve, reject) {
+        return req.on('end', () => {
+            resolve(Buffer.concat(buffers,size));
         });
-    })
-    next();
-})
-
-// Your route registration:
-app.get('/', function(){// whatever...
-});
-
-app.post('/test', function(req, res){
-    console.log(req.rawBody);
-    res.send("your request raw body is:"+req.rawBody);
+    });
+    let str = await data;
+    ctx.request.body = ctx.request.body||JSON.parse(str.toString());
+    console.log(ctx.request.body);
+    await next();
 });
