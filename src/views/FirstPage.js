@@ -23,7 +23,7 @@ const Swiper = React.createClass({
     });
   },
   render() {
-    let list = ["images/h.png", "images/k.png", "images/n.png", "images/t.png"];
+    let list = ["images/h.jpg", "images/k.jpg", "images/n.jpg", "images/t.jpg"];
     let listhref = ["#", "#", "#", "#"]
     let piclist = list.map(function (value, index) {
       return (<div ref={"cs_" + index} key={index} className="swiper-slide"><a ref={"swiper_a_" + index} href={listhref[index]} className="thumbnail"><img ref={"swiper_img_" + index} src={value} alt="" /></a></div>)
