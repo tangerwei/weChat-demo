@@ -43,6 +43,7 @@
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.0.1",
+    "redux": "^3.6.0",
     "style-loader": "^0.16.0",
     "swiper": "^3.4.2",
     "webpack": "^2.2.1"

@@ -23,7 +23,7 @@ var config = {
     //其他配置//[name].[hash].js
     output: {
         filename: '[name].build.js',
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'code'),
     },
     resolve: {
         extensions: [".js", ".jsx"],
