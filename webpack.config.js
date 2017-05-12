@@ -12,17 +12,17 @@ var uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
 var htmlWebpackPlugin = require("html-webpack-plugin");
 var htmlsc = new htmlWebpackPlugin({
     filename:'index.html',
-    template:path.resolve(__dirname, 'code/index.html')
+    template:path.resolve(__dirname, 'codeForBlog/index.html')
 });
 var config = {
     plugins: [commonPlugin, uglifyPlugin, htmlsc],
     entry: {
-        root: path.resolve(__dirname, 'code/root.js')
+        index: path.resolve(__dirname, 'codeForBlog/index.js')
     },
     //其他配置//[name].[hash].js
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'code/build'),
+        path: path.resolve(__dirname, 'codeForBlog/build'),
     },
     resolve: {
         extensions: [".js", ".jsx"],
