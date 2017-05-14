@@ -1,5 +1,4 @@
 function init(){
-    console.log('index into');
     let d = window.innerWidth;
     if(d < 420){
         //手机显示
@@ -10,12 +9,12 @@ function init(){
     }
 }
 function initMobile(){
-    window.location = './src/iframe.html';
+    window.location = './iframe.html';
 }
 function initPc(){
     console.log('index initpc');
     var iframe = document.createElement("iframe");
-    iframe.src = "./src/iframe.html";
+    iframe.src = "./iframe.html";
     iframe.className = "iframe";
     iframe.frameBorder = "0";
     iframe.scrolling = "0";

@@ -4,6 +4,7 @@ import { Map } from 'immutable';
 import { ReduceStore } from 'flux/utils';
 import TodoActionTypes from './TodoActionTypes';
 import TodoDispatcher from './TodoDispatcher';
+import status from './initState'
 
 class ShowingStore extends ReduceStore {
     constructor() {
@@ -11,14 +12,17 @@ class ShowingStore extends ReduceStore {
     }
 
     getInitialState() {
-        return Map({ applistIndex: "0" });
+        return Map(status);
     }
 
     reduce(state, action) {
         switch (action.type) {
             case TodoActionTypes.TOGGLE_LIST_INDEX:
                 return state.set("applistIndex", action.value);
-
+            case TodoActionTypes.OPENLOGIN:
+                return state.set("loginpageopen", true);
+            case TodoActionTypes.CLOSELOGIN:
+                return state.set("loginpageopen", false);
             default:
                 return state;
         }

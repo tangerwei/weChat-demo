@@ -8,4 +8,3 @@ const RootEl2 = React.createClass({
         return (<div>{this.state.key}</div>)
     }
 });
-ReactDOM.render(<RootEl2 />, document.getElementById("root"))

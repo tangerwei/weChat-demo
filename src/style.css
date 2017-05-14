@@ -1,0 +1,141 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+div {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+}
+
+.self-nav-btn {
+    position: fixed;
+    left: -2px;
+    bottom: 0;
+    display: flex;
+    right: -2px;
+}
+
+.self-nav-btn button {
+    display: block;
+    border-left: none;
+    border-right: none;
+    flex: 1;
+}
+
+.details-1 {
+    height: calc(100% - 54px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 350px) {
+    .btn-font {
+        display: none
+    }
+    .details {
+        height: calc(100% - 34px);
+    }
+    .self-img-font {
+        display: none;
+    }
+}
+
+.self-group-search {
+    padding: 0 0.1rem;
+}
+
+.self-title {
+    font-size: 0.3rem;
+    text-align: center;
+    margin: 0.1rem 0;
+}
+
+#firstPage_label_list li {
+    border-left: 1px solid #fff;
+    color: #fff;
+    margin: 3px 0px;
+    text-align: center;
+    background-color: #1f1f1f;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    flex: 1;
+}
+
+.self-img-full {
+    width: 50%;
+    height: auto;
+}
+
+#firstPage_label_list li:first {
+    border-left: none;
+}
+
+#firstPage_label_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+
+.loginBtn {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loginhold{
+    padding: 0 0.4rem;
+    margin-top: 0.4rem;
+}
+.loginhold input{
+    height: 0.7rem;
+}
+.password,.self-login-btn{
+    margin-top:0.2rem;
+}
+button.self-login-btn{
+    width: 100%;
+}
+.self-login-pages{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.4rem;
+    background-color: yellowgreen;
+}
+.self-icon-words span:last-child{
+    float: right
+}
+img.self-login-logo{
+    width: 100%;
+    height: auto;
+}
+.self-icon-words {
+    margin-top: 0.1rem;
+}
+.self-other-login{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.pages{
+    margin-top: 0.2rem;
+    padding: 0 0.4rem;
+}
+
+#swiper-container{
+    overflow: hidden;
+}
