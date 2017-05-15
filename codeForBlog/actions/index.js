@@ -3,7 +3,9 @@
 // export const SELECT_REDDIT = 'SELECT_REDDIT'
 // export const INVALIDATE_REDDIT = 'INVALIDATE_REDDIT'
 export const CHANGETITLE = 'CHANGETITLE'
-export const clicknav = navStr => ({
-  type: CHANGETITLE,
-  navStr
-})
+export const clicknav = navStr => {
+  return ({
+    type: CHANGETITLE,
+    navStr
+  })
+};

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { clickNav } from '../actions'
+import { clicknav } from '../actions'
 
 class App extends Component {
     componentDidMount() {
@@ -9,18 +9,16 @@ class App extends Component {
     componentWillReceiveProps(nextPorps) {
         console.log('component receive props');
     }
-    handleClick(e) {
-        clickNav("hello world");
-        e.preventDefault();
+    handleClick() {
+        this.props.dispatch(clicknav("helkk"));
     }
     render() {
         const { navTag } = this.props;
-        console.log(this.props);
-        return (<div onClick={this.handleChange}>{navTag}123</div>);
+        return (<div onClick = {this.handleClick.bind(this)}>{navTag}123</div>);
     }
 }
 const mapStateToProps = state => {
-    const { navTag } = state
+    const { navTag } = state;
     return {
         navTag
     }
